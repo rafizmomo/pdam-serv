@@ -20,18 +20,35 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware' => ['cors', 'json.response']], function () {
 
-    // public routes
+    //NOTE SEBELUM LOGIN
     Route::post('/login', 'API\AuthController@login')->name('login.api');
     Route::post('/register', 'API\AuthController@register')->name('register.api');
-});
 
-Route::middleware('auth:api')->group(function () {
-    // our routes to be protected will go in here
-    Route::post('/logout', 'API\AuthController@logout')->name('logout.api');
+    //ANCHOR Middleware untuk auth api login
+    Route::middleware('auth:api')->group(function () {
 
-    Route::group(['middleware' => 'api.admin'], function () {
-        Route::get('/user', function (Request $request) {
-            return $request->user();
+        //NOTE UNTUK USER
+        Route::post('/logout', 'API\AuthController@logout')->name('logout.api');
+
+        //ANCHOR Middleware untuk admin
+        /*
+        Route::group(['middleware' => 'api.admin'], function () {
+            Route::get('/user', function (Request $request) {
+                return $request->user();
+            });
         });
+        */
+
+        Route::prefix('admin')
+            ->middleware('api.admin')
+            ->group(function () {
+                Route::get('/user', function (Request $request) {
+                    return $request->user();
+                });
+
+                Route::get('t4pelanggan', 'API\Admin\T4PelangganController@index'); //NOTE VIEW ALL DATA
+                Route::get('t4pelanggan/{idpel}', 'API\Admin\T4PelangganController@show'); //NOTE VIEW SINGLE DATA
+                Route::put('t4pelanggan/', 'API\Admin\T4PelangganController@store'); //NOTE INPUT DATA
+            });
     });
 });

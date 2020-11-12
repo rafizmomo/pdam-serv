@@ -15,8 +15,8 @@ class CreateT4rekbayarbasTable extends Migration
     {
         Schema::create('t4rekbayarbas', function (Blueprint $table) {
             $table->id();
-            $table->string('idpel');
-            $table->string('idjln');
+            $table->unsignedBigInteger('idpel');
+            $table->unsignedInteger('idjln');
             $table->string('kdpellama');
             $table->string('keltarif');
             $table->string('gol');

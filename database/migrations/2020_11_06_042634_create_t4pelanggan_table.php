@@ -14,9 +14,9 @@ class CreateT4pelangganTable extends Migration
     public function up()
     {
         Schema::create('t4pelanggan', function (Blueprint $table) {
-            $table->string('idno')->unique();
-            $table->string('idpel')->primary();
-            $table->string('idjln');
+            $table->unsignedInteger('idno')->unique();
+            $table->bigIncrements('idpel');
+            $table->unsignedInteger('idjln');
             $table->string('namapel');
             $table->string('kelompok');
             $table->string('ketkelompok');

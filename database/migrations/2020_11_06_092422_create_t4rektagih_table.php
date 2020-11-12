@@ -15,8 +15,8 @@ class CreateT4rektagihTable extends Migration
     {
         Schema::create('t4rektagih', function (Blueprint $table) {
             $table->id();
-            $table->string('idpel');
-            $table->string('idjln');
+            $table->UnsignedbigInteger('idpel');
+            $table->unsignedInteger('idjln');
             $table->string('kdpellama');
             $table->string('keltarif');
             $table->string('gol');
