@@ -39,9 +39,10 @@ class T4PelangganController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(T4PelangganRequest $request)
+    public function store(Request $request)
     {
-        //REVIEW CEK KEMBALI REQUEST
+        //FIXME CEK KEMBALI REQUEST 
+
         $data = $request->all();
         $data_save = T4Pelanggan::create($data);
 
