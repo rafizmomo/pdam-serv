@@ -53,15 +53,16 @@ Route::group(['middleware' => ['cors', 'json.response']], function () {
                 Route::delete('t4pelanggan/{idpel}', 'API\Admin\T4PelangganController@destroy'); //NOTE DELETE DATA
                 Route::post('t4pelanggan/search', 'API\Admin\T4PelangganController@search'); //NOTE SEARCH DATA
 
-                //FIXME
+
                 Route::get('t4rektagih', 'API\Admin\T4RekTagihController@index'); //NOTE VIEW ALL DATA
                 Route::get('t4rektagih/{id}', 'API\Admin\T4RekTagihController@show'); //NOTE VIEW SINGLE DATA
                 Route::post('t4rektagih', 'API\Admin\T4RekTagihController@store'); //NOTE INPUT DATA
                 Route::put('t4rektagih/{id}', 'API\Admin\T4RekTagihController@update'); //NOTE UPDATE DATA
                 Route::delete('t4rektagih/{id}', 'API\Admin\T4RekTagihController@destroy'); //NOTE DELETE DATA
-                Route::post('t4rektagih/cari', 'API\Admin\T4RekTagihController@search'); //NOTE SEARCH DATA
+                Route::post('t4rektagih/search', 'API\Admin\T4RekTagihController@search'); //NOTE SEARCH DATA
 
-                Route::post('t4rekbayarbas/cari', 'API\Admin\T4RekBayarBasController@search'); //NOTE SEARCH DATA
+                //FIXME
+                Route::post('t4rekbayarbas/search', 'API\Admin\T4RekBayarBasController@search'); //NOTE SEARCH DATA
 
 
             });
