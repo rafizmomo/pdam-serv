@@ -195,6 +195,7 @@ class T4RekTagihController extends Controller
             ->where('t4pelanggan.namapel', 'like', "%$search%")
             ->get();
 
+<<<<<<< HEAD
         if (is_null($item)) {
             $response = APIHelpers::createAPIResponse(false, 200, 'Data Search Success', null);
             return response()->json($response, 200);
@@ -203,6 +204,13 @@ class T4RekTagihController extends Controller
             return response()->json($response, 400);
         } else {
             $response = APIHelpers::createAPIResponse(true, 400, 'Data Search Failed',  $item);
+=======
+        if ($item) {
+            $response = APIHelpers::createAPIResponse(false, 201, 'Data Added Success', $item);
+            return response()->json($response, 200);
+        } else {
+            $response = APIHelpers::createAPIResponse(true, 400, 'Data Added Failed', null);
+>>>>>>> 4c78247dd2f90fbeeb46fc786faf4186327a9374
             return response()->json($response, 400);
         }
 
