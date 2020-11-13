@@ -1,14 +1,26 @@
 <?php
 
-namespace App\Http\Controllers\API\Admin;
+namespace App\Http\Controllers\API;
 
 use App\Helpers\APIHelpers;
 use App\Http\Controllers\Controller;
-use App\Models\T4RekBayarBas;
+use App\Models\T4Pelanggan;
 use Illuminate\Http\Request;
 
-class T4RekBayarBasController extends Controller
+class T4ProfilPelangganController extends Controller
 {
+    public function profile($idpel)
+    {
+        $item =  T4Pelanggan::getProfileT4Pelanggan()->where('idpel', $idpel)->get();
+
+        if ($item != null) {
+            $response = APIHelpers::createAPIResponse(false, 200, 'Data ' . $idpel . ' Found', $item);
+            return response()->json($response, 200);
+        } else {
+            $response = APIHelpers::createAPIResponse(true, 404, 'Data ' . $idpel . ' Not Found', null);
+            return response()->json($response, 404);
+        }
+    }
     /**
      * Display a listing of the resource.
      *
@@ -83,28 +95,5 @@ class T4RekBayarBasController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    public function search(Request $request)
-    {
-        //REVIEW CEK KEMBALI REQUEST
-        //$data = $request->all();
-
-        //TODO PAKAI LARAVEL RESOURCE BIAR GAMPANG
-        $search = $request->input('namapel');
-        $item =  T4RekBayarBas::t4RekBayarBasGetAllWithT4Pelanggan()
-            ->where('t4pelanggan.namapel', 'like', "%$search%")
-            ->get();
-
-        if (is_null($item)) {
-            $response = APIHelpers::createAPIResponse(false, 200, 'Data Not Found', null);
-            return response()->json($response, 200);
-        } else if ($item) {
-            $response = APIHelpers::createAPIResponse(false, 400, 'Data Found',  $item);
-            return response()->json($response, 400);
-        } else {
-            $response = APIHelpers::createAPIResponse(true, 400, 'Data Search Failed',  $item);
-            return response()->json($response, 400);
-        }
     }
 }

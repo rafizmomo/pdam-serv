@@ -1,13 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\API\Admin;
+namespace App\Http\Controllers\API;
 
-use App\Helpers\APIHelpers;
 use App\Http\Controllers\Controller;
-use App\Models\T4RekBayarBas;
 use Illuminate\Http\Request;
 
-class T4RekBayarBasController extends Controller
+class T4BayarTagihanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -83,28 +81,5 @@ class T4RekBayarBasController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    public function search(Request $request)
-    {
-        //REVIEW CEK KEMBALI REQUEST
-        //$data = $request->all();
-
-        //TODO PAKAI LARAVEL RESOURCE BIAR GAMPANG
-        $search = $request->input('namapel');
-        $item =  T4RekBayarBas::t4RekBayarBasGetAllWithT4Pelanggan()
-            ->where('t4pelanggan.namapel', 'like', "%$search%")
-            ->get();
-
-        if (is_null($item)) {
-            $response = APIHelpers::createAPIResponse(false, 200, 'Data Not Found', null);
-            return response()->json($response, 200);
-        } else if ($item) {
-            $response = APIHelpers::createAPIResponse(false, 400, 'Data Found',  $item);
-            return response()->json($response, 400);
-        } else {
-            $response = APIHelpers::createAPIResponse(true, 400, 'Data Search Failed',  $item);
-            return response()->json($response, 400);
-        }
     }
 }

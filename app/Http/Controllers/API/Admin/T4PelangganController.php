@@ -141,16 +141,14 @@ class T4PelangganController extends Controller
         $item =  T4Pelanggan::getDataT4Pelanggan()->where('namapel', 'like', "%$search%")->get();
 
         if (is_null($item)) {
-            $response = APIHelpers::createAPIResponse(false, 200, 'Data Search Success', null);
+            $response = APIHelpers::createAPIResponse(false, 200, 'Data Not Found', null);
             return response()->json($response, 200);
         } else if ($item) {
-            $response = APIHelpers::createAPIResponse(false, 400, 'Data Search Failed',  $item);
+            $response = APIHelpers::createAPIResponse(false, 400, 'Data Found',  $item);
             return response()->json($response, 400);
         } else {
             $response = APIHelpers::createAPIResponse(true, 400, 'Data Search Failed',  $item);
             return response()->json($response, 400);
         }
-
-        //TODO Buat T4RekBayarBasRequest
     }
 }

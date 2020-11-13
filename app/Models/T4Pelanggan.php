@@ -71,4 +71,24 @@ class T4Pelanggan extends Model
         return DB::table('t4pelanggan')
             ->select();
     }
+
+    public static function getProfileT4Pelanggan()
+    {
+        return DB::table('t4pelanggan')
+            ->select(
+                'namapel',
+                'kelompok',
+                'kdpellama',
+                'alamat',
+                'RT',
+                'RW',
+                'Desa',
+                'Kecamatan',
+                'Contact',
+                'telp',
+                'tgl_lahir',
+                'lat',
+                'lng'
+            );
+    }
 }

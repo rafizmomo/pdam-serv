@@ -66,7 +66,7 @@ Route::group(['middleware' => ['cors', 'json.response']], function () {
             });
 
         //FIXME
-        Route::get('lihatprofilpelanggan/{id}', 'API\T4ProfilPelanggan@profil'); //NOTE GET DATA
+        Route::get('lihatprofilpelanggan/{idpel}', 'API\T4ProfilPelangganController@profile'); //NOTE GET DATA
         Route::get('bayartagihan/{id}', 'API\T4BayarTagihanController@bayar'); //NOTE GET DATA
         Route::post('bayartagihan/{id}', 'API\T4BayarTagihanController@bayar'); //NOTE POST DATA
     });
