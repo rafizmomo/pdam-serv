@@ -61,12 +61,13 @@ Route::group(['middleware' => ['cors', 'json.response']], function () {
                 Route::delete('t4rektagih/{id}', 'API\Admin\T4RekTagihController@destroy'); //NOTE DELETE DATA
                 Route::post('t4rektagih/search', 'API\Admin\T4RekTagihController@search'); //NOTE SEARCH DATA
 
-                //FIXME
+
                 Route::post('t4rekbayarbas/search', 'API\Admin\T4RekBayarBasController@search'); //NOTE SEARCH DATA
-
-
             });
-        Route::post('lihatprofilpelanggan/{idpel}', 'API\T4ProfilPelanggan@profil'); //NOTE SHOW DATA
-        Route::post('bayartagihan/{idpel}', 'API\T4BayarTagihanController@bayar'); //NOTE SEARCH DATA
+
+        //FIXME
+        Route::get('lihatprofilpelanggan/{id}', 'API\T4ProfilPelanggan@profil'); //NOTE GET DATA
+        Route::get('bayartagihan/{id}', 'API\T4BayarTagihanController@bayar'); //NOTE GET DATA
+        Route::post('bayartagihan/{id}', 'API\T4BayarTagihanController@bayar'); //NOTE POST DATA
     });
 });
