@@ -13,7 +13,7 @@ class T4PelangganRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return false;
     }
 
     /**
