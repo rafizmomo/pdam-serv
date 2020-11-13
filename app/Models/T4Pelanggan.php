@@ -66,11 +66,7 @@ class T4Pelanggan extends Model
         return 'idpel';
     }
 
-    public static function getDataT4Pelanggan()
-    {
-        return DB::table('t4pelanggan')
-            ->select();
-    }
+
 
     public static function getProfileT4Pelanggan()
     {

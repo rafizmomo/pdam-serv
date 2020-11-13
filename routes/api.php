@@ -45,7 +45,7 @@ Route::group(['middleware' => ['cors', 'json.response']], function () {
                 Route::get('/user', function (Request $request) {
                     return $request->user();
                 });
-
+                //ANCHOR T4PELANGGAN
                 Route::get('t4pelanggan', 'API\Admin\T4PelangganController@index'); //NOTE VIEW ALL DATA
                 Route::get('t4pelanggan/{idpel}', 'API\Admin\T4PelangganController@show'); //NOTE VIEW SINGLE DATA
                 Route::post('t4pelanggan', 'API\Admin\T4PelangganController@store'); //NOTE INPUT DATA
@@ -53,7 +53,7 @@ Route::group(['middleware' => ['cors', 'json.response']], function () {
                 Route::delete('t4pelanggan/{idpel}', 'API\Admin\T4PelangganController@destroy'); //NOTE DELETE DATA
                 Route::post('t4pelanggan/search', 'API\Admin\T4PelangganController@search'); //NOTE SEARCH DATA
 
-
+                //ANCHOR T4REKTAGIH
                 Route::get('t4rektagih', 'API\Admin\T4RekTagihController@index'); //NOTE VIEW ALL DATA
                 Route::get('t4rektagih/{id}', 'API\Admin\T4RekTagihController@show'); //NOTE VIEW SINGLE DATA
                 Route::post('t4rektagih', 'API\Admin\T4RekTagihController@store'); //NOTE INPUT DATA
@@ -61,13 +61,13 @@ Route::group(['middleware' => ['cors', 'json.response']], function () {
                 Route::delete('t4rektagih/{id}', 'API\Admin\T4RekTagihController@destroy'); //NOTE DELETE DATA
                 Route::post('t4rektagih/search', 'API\Admin\T4RekTagihController@search'); //NOTE SEARCH DATA
 
-
+                //ANCHOR T4REKBAYARBAS
                 Route::post('t4rekbayarbas/search', 'API\Admin\T4RekBayarBasController@search'); //NOTE SEARCH DATA
             });
 
-        //FIXME
         Route::get('lihatprofilpelanggan/{idpel}', 'API\T4ProfilPelangganController@profile'); //NOTE GET DATA
-        Route::get('bayartagihan/{id}', 'API\T4BayarTagihanController@bayar'); //NOTE GET DATA
-        Route::post('bayartagihan/{id}', 'API\T4BayarTagihanController@bayar'); //NOTE POST DATA
+        //FIXME
+        //Route::post('bayartagihan', 'API\T4BayarTagihanController@lihat'); //NOTE GET DATA
+        Route::post('bayartagihan', 'API\T4BayarTagihanController@bayar'); //NOTE POST DATA
     });
 });

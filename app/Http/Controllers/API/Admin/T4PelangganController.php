@@ -62,7 +62,7 @@ class T4PelangganController extends Controller
      */
     public function show($idpel)
     {
-        $item =  T4Pelanggan::getDataT4Pelanggan()->where('idpel', $idpel)->get();
+        $item =  T4Pelanggan::where('idpel', $idpel)->get();
 
         if ($item != null) {
             $response = APIHelpers::createAPIResponse(false, 200, 'Data ' . $idpel . ' Found', $item);
@@ -96,7 +96,7 @@ class T4PelangganController extends Controller
         //REVIEW UPDATE DATA
 
         $data = $request->all();
-        $item =  T4Pelanggan::getDataT4Pelanggan()->where('idpel', $idpel);
+        $item =  T4Pelanggan::where('idpel', $idpel);
         $item_update = $item->update($data);
 
         if ($item_update) {
@@ -119,7 +119,7 @@ class T4PelangganController extends Controller
         //
         //REVIEW DELETE DATA
         //FIXME DELETE DATA
-        $item =  T4Pelanggan::getDataT4Pelanggan()->where('idpel', $idpel);
+        $item =  T4Pelanggan::where('idpel', $idpel);
         $item_destroy = $item->delete();
 
         if ($item_destroy) {
@@ -138,7 +138,7 @@ class T4PelangganController extends Controller
 
         //TODO PAKAI LARAVEL RESOURCE BIAR GAMPANG
         $search = $request->input('namapel');
-        $item =  T4Pelanggan::getDataT4Pelanggan()->where('namapel', 'like', "%$search%")->get();
+        $item =  T4Pelanggan::where('namapel', 'like', "%$search%")->get();
 
         if (is_null($item)) {
             $response = APIHelpers::createAPIResponse(false, 200, 'Data Not Found', null);
