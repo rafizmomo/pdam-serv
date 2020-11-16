@@ -74,7 +74,4 @@ class T4RekTagih extends Model
                 't4pelanggan.telp'
             );
     }
-    public static function t4RektagihToRekBayarBas()
-    {
-    }
 }

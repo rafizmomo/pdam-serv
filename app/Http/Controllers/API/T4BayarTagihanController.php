@@ -77,8 +77,19 @@ class T4BayarTagihanController extends Controller
         }
     }
 
-    public function lihat()
+    public function lihat(Request $request)
     {
+        $search = $request->input('idpel');
+        $item_rektagih =  T4RekTagih::where('idpel', '=', $search)
+            ->get();
+
+        if ($item_rektagih) {
+            $response = APIHelpers::createAPIResponse(false, 201, 'Data Added Success', $item_rektagih);
+            return response()->json($response, 200);
+        } else {
+            $response = APIHelpers::createAPIResponse(true, 400, 'Data Added Failed', null);
+            return response()->json($response, 400);
+        }
     }
 
     public function index()
