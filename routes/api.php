@@ -42,9 +42,7 @@ Route::group(['middleware' => ['cors', 'json.response']], function () {
         Route::prefix('admin')
             ->middleware('api.admin')
             ->group(function () {
-                Route::get('/user', function (Request $request) {
-                    return $request->user();
-                });
+
                 //ANCHOR T4PELANGGAN
                 Route::get('t4pelanggan', 'API\Admin\T4PelangganController@index'); //NOTE VIEW ALL DATA
                 Route::get('t4pelanggan/{idpel}', 'API\Admin\T4PelangganController@show'); //NOTE VIEW SINGLE DATA
