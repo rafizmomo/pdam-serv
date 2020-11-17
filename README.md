@@ -1,9 +1,8 @@
-Learn API
-
-framework: laravel 7
-database: sql
-
+# Learn API
 REST API CRUD
-database: pdam-serv.sql
 
-:)
+Tools:
+- Framework : Laravel 7
+- Database : MySQL
+
+Menggunakan laravel passport untuk keamanan, laravel migration untuk database
