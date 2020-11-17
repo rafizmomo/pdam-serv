@@ -67,7 +67,7 @@ Route::group(['middleware' => ['cors', 'json.response']], function () {
 
         Route::get('lihatprofilpelanggan/{idpel}', 'API\T4ProfilPelangganController@profile'); //NOTE GET DATA
 
-        Route::post('bayartagihan', 'API\T4BayarTagihanController@lihat'); //NOTE GET DATA
-        Route::post('bayartagihan', 'API\T4BayarTagihanController@bayar'); //NOTE POST DATA
+        Route::post('bayartagihan/lihat', 'API\T4BayarTagihanController@lihat'); //NOTE GET DATA
+        Route::post('bayartagihan/bayar', 'API\T4BayarTagihanController@bayar'); //NOTE POST DATA
     });
 });
