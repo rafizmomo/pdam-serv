@@ -9,7 +9,8 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style></style>
     </head>
     <body style="background-color: #f0f0f0;">
@@ -771,6 +772,58 @@
     
             
         </section>
+        <footer class="footer mt-4-mb-4 border-top" id="footer">
+            <div class="container" id="footerTop">
+                <div class="row justify-content-center footer-top pb-5">
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-12 col-lg-3 ml-auto footer-contact-us pt-5">
+                                <h5>
+                                    CONTACT US
+                                </h5>
+                                <table>
+                                    <tr>
+                                        <td>Email: </td>
+                                        <td><a href="mailto:sizansan@gmail.com">sizansan@gmail.com</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Telegram: </td>
+                                        <td><a href="https://telegram.me/rafizmomo ">@rafizmomo</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Instagram: </td>
+                                        <td><a href="https://www.instagram.com/rafizmomo/">@rafizmomo</a></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="col-12 col-lg-3 footer-contact-us pt-5">
+                                <h5>
+                                    OUR LOCATION
+                                </h5>
+                                <table>
+                                    <tr>
+                                      
+                                        <td>
+                                            <p>
+                                                Lhokseumawe,<br>
+                                                Aceh,<br>
+                                                Indonesia
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid" id="footerBottom">
+                <div class="row footer-bottom justify-content-center align-item-center pt-4 pb-4">
+                    © 2020 Copyright:
+                    <a href="https://github.com/rafizmomo">Ihsan Alhafiz</a>
+                </div>
+            </div>
+        </footer>
+            </body>
+        </html>
         
-    </body>
-</html>
